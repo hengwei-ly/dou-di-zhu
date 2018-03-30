@@ -1,0 +1,14 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<div class="row">
+
+{{ range $tId ,$table := .tables}}
+	<a href="tables?tableId={{$table.Id}}">
+    <div class="col-lg-2 col-lg-offset-1" style="height: 100px; width: 100px;border: solid;">
+      {{$table.Id}} 号桌
+    </div>
+	</a>
+{{end}}
+</div>
+{{template "footer.html" .}}
